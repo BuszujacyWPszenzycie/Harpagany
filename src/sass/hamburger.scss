@@ -5,7 +5,6 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-
 .hamburger {
 	padding: 15px 15px;
 	display: inline-block;
@@ -68,7 +67,6 @@
 .hamburger-inner::after {
 	bottom: -10px;
 }
-
 .hamburger--spin .hamburger-inner {
 	transition-duration: 0.22s;
 	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
