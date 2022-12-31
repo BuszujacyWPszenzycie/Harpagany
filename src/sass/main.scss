@@ -26,15 +26,24 @@ body {
 
 // HEADER
 
-.header-wrapper {
-}
-
 header {
 	position: relative;
+	height: 100vh;
+	background: linear-gradient(to right, #e84545, #2b2e4a);
 
 	.hamburger {
 		position: absolute;
-		z-index: 20;
+		top: 3em;
+		left: 1em;
+		transform: translateY(-50%);
+		z-index: 500;
+
+		&-inner,
+		&-inner::before,
+		&-inner::after {
+			background-color: $light-white;
+			z-index: 500;
+		}
 	}
 
 	.nav {
@@ -74,11 +83,27 @@ header {
 	}
 }
 
-// .nav {
-// 	position: relative;
-// 	height: 100vh;
-// 	background-image: url(../img/header_big.jpg);
-// 	&-desktop {
-// 		display: none;
-// 	}
-// }
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+	.hamburger {
+		display: none;
+	}
+	header {
+		background-color: $red;
+		.nav {
+			&-mobile {
+				display: none;
+			}
+			&-desktop {
+				display: block;
+			}
+
+			&__link {
+				color: $light-white;
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+}
