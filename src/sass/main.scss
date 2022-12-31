@@ -1,3 +1,5 @@
+@use 'colors' as *;
+
 *,
 *::before,
 *::after {
@@ -16,6 +18,67 @@ body {
 	font-family: 'Inter', sans-serif;
 }
 
-h3 {
-	color: blue;
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
 }
+
+// HEADER
+
+.header-wrapper {
+}
+
+header {
+	position: relative;
+
+	.hamburger {
+		position: absolute;
+		z-index: 20;
+	}
+
+	.nav {
+		&-mobile {
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			background-color: $navy;
+			transition: transform 0.3s;
+			transform: translate(-102%);
+
+			&--active {
+				transform: translateX(0);
+			}
+		}
+		&-desktop {
+			display: none;
+		}
+
+		&__link {
+			position: relative;
+			display: inline-block;
+			margin: 0.5em;
+			padding: 0.5em;
+			font-size: 2.3rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: $red;
+		}
+	}
+}
+
+// .nav {
+// 	position: relative;
+// 	height: 100vh;
+// 	background-image: url(../img/header_big.jpg);
+// 	&-desktop {
+// 		display: none;
+// 	}
+// }
