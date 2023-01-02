@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	font-family: 'Inter', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
@@ -39,8 +39,23 @@ body {
 		background-color: rgba(0, 0, 0, 0.87);
 	}
 
+	.main-title {
+		position: absolute;
+		// font-size: 5rem;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $light-white;
+		font-size: 10rem;
+		font-weight: 300;
+		text-transform: uppercase;
+
+		// z-index: 1000;
+	}
+
 	.nav {
 		&__box {
+			// position: relative;
 			&-desktop {
 				display: none;
 			}
@@ -79,10 +94,29 @@ body {
 		.nav {
 			&__box {
 				&-desktop {
+					// justify-content: center;
+					display: block;
 					position: absolute;
+					top: 4rem;
+					left: 0;
+					width: 100%;
+				}
+
+				&-links {
+					position: relative;
+					width: 100%;
 					display: flex;
-					justify-content: space-between;
-					top: 0;
+					justify-content: space-evenly;
+					align-items: center;
+				}
+
+				&-logo {
+					font-size: 5rem;
+					color: $light-white;
+				}
+
+				&-link {
+					margin-right: 3rem;
 				}
 			}
 		}
