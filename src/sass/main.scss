@@ -1,4 +1,6 @@
 @use 'colors.scss' as *;
+@use 'animations.scss' as *;
+
 *,
 *::before,
 *::after {
@@ -25,6 +27,21 @@ body {
 	z-index: 500;
 }
 
+.section-heading {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5rem;
+	padding-top: 3rem;
+	padding-bottom: 5rem;
+	text-transform: uppercase;
+	color: $red;
+	font-weight: 100;
+}
+
+// HEADER
+
 .header {
 	position: relative;
 	background-image: url('../img/header_2.jpg');
@@ -39,23 +56,69 @@ body {
 		background-color: rgba(0, 0, 0, 0.87);
 	}
 
-	.main-title {
+	&__icon {
 		position: absolute;
-		// font-size: 5rem;
-		top: 50%;
+		top: 90%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		color: $light-white;
-		font-size: 10rem;
-		font-weight: 300;
-		text-transform: uppercase;
+		font-size: 6rem;
+		cursor: pointer;
 
-		// z-index: 1000;
+		&-a {
+			position: absolute;
+			transform: translateX(-50%);
+			display: block;
+			font-size: 5rem;
+			padding: 2rem;
+			bottom: -0.75em;
+			color: $red;
+			border: 1px solid $red;
+			border-radius: 50%;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: '';
+				width: 100%;
+				height: 100%;
+				border: 1px solid $red;
+				border-radius: 50%;
+				animation: pulse 2s infinite;
+			}
+		}
 	}
+
+	// NAV
 
 	.nav {
 		&__box {
 			// position: relative;
+			&-title {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: $light-white;
+				font-size: 3rem;
+				text-transform: uppercase;
+			}
+
+			&-icon {
+				font-size: 6rem;
+			}
+
+			&-h1 {
+				font-weight: 200;
+			}
+
+			&-flex-wrapper {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
 			&-desktop {
 				display: none;
 			}
@@ -76,11 +139,91 @@ body {
 			}
 
 			&-link {
+				position: relative;
 				color: $light-white;
 				font-size: 4rem;
 				text-transform: uppercase;
 				text-decoration: none;
 				margin-bottom: 3rem;
+				padding: 1rem;
+				transition: color 0.3s;
+
+				&:hover {
+					color: $light-white;
+				}
+
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: '';
+					width: 100%;
+					height: 100%;
+					border: 1px solid $light-white;
+					opacity: 0;
+				}
+
+				&:hover::before {
+					animation: pulse 1s;
+				}
+			}
+		}
+	}
+}
+
+// TEAM
+
+.team {
+	&__card {
+		position: relative;
+		height: 450px;
+		width: 300px;
+		text-align: center;
+		perspective: 1000px;
+
+		&:hover {
+			.team__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+
+			.team__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			height: 100%;
+			background-size: cover;
+			border-radius: 8px;
+			transition: transform 1s, opacity 1s;
+
+			&--first {
+				background-image: url(../img/Filipiak_Mateusz.jpg);
+			}
+
+			&-info {
+				position: absolute;
+				bottom: 30px;
+				right: 15px;
+			}
+		}
+
+		&-info {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: $red;
+			opacity: 0;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
+
+			&-title {
+				position: absolute;
+				transform: translateY(-50%);
 			}
 		}
 	}
@@ -93,6 +236,14 @@ body {
 	.header {
 		.nav {
 			&__box {
+				&-title {
+					font-size: 4.2rem;
+				}
+
+				&-icon {
+					font-size: 8rem;
+				}
+
 				&-desktop {
 					// justify-content: center;
 					display: block;
@@ -111,12 +262,39 @@ body {
 				}
 
 				&-logo {
+					position: relative;
 					font-size: 5rem;
 					color: $light-white;
+					transition: color 0.3s;
+
+					&:hover {
+						color: $red;
+					}
 				}
 
 				&-link {
 					margin-right: 3rem;
+					transition: color 0.3s;
+
+					&:hover {
+						color: $red;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.header {
+		.nav {
+			&__box {
+				&-title {
+					font-size: 5rem;
+				}
+
+				&-icon {
+					font-size: 10rem;
 				}
 			}
 		}

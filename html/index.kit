@@ -12,12 +12,15 @@
 <body>
 
   <header class="header">
-
     <div class="header__image-shadow">
       <nav class="nav__box">
-
-        <h1 class="main-title"><i class="fa-solid fa-bolt-lightning"></i></i> harpagany
-        </h1>
+        <div class="nav__box-title">
+          <div class="nav__box-flex-wrapper">
+            <i class="nav__box-icon bi bi-lightning"></i>
+            <p>&nbsp;</p>
+            <h1 class="nav__box-h1">harpagany</h1>
+          </div>
+        </div>
 
         <button class="hamburger hamburger--spin" type="button">
           <span class="hamburger-box">
@@ -26,30 +29,59 @@
         </button>
 
         <div class="nav__box-mobile">
-          <a href="" class="nav__box-link">O nas</a>
-          <a href="" class="nav__box-link">Galeria</a>
-          <a href="" class="nav__box-link">Liga</a>
+          <a href="#team" class="nav__box-link">Zespół</a>
+          <a href="#gallery" class="nav__box-link">Galeria</a>
+          <a href="#league" class="nav__box-link">Liga</a>
         </div>
 
         <div class="wrapper">
           <div class="nav__box-desktop">
             <div class="nav__box-links">
-              <div class="nav__box-logo"><a href="#"><i class="nav__box-logo fa-solid fa-volleyball"></i></a>
+              <div class="nav__box-logo">
+                <a href="#"><i class="nav__box-logo fa-solid fa-volleyball"></i></a>
               </div>
               <div class="nav__box-menu">
-                <a href="" class="nav__box-link">O nas</a>
-                <a href="" class="nav__box-link">Galeria</a>
-                <a href="" class="nav__box-link">Liga</a>
+                <a href="#team" class="nav__box-link">Zespół</a>
+                <a href="#gallery" class="nav__box-link">Galeria</a>
+                <a href="#league" class="nav__box-link">Liga</a>
               </div>
-
             </div>
           </div>
-
         </div>
       </nav>
     </div>
-
+    <div class="header__icon">
+      <a href="#team" class="header__icon-a"><i class="header__icon-item bi-arrow-down"></i></a>
+    </div>
   </header>
+
+  <main class="main">
+    <section class="team" id="team">
+      <div class="wrapper">
+        <h2 class="section-heading">nasz zespół</h2>
+        <div class="team__card" onclick="void(0)">
+          <div class="team__card-img team__card-img--first">
+            <h3 class="team__card-img-title">Mateusz Filipiak</h3>
+            <p class="team__card-img-info">
+              <i class="bi bi-arrow-90deg-right"></i>Więcej
+            </p>
+          </div>
+          <div class="team__card-info">
+            <h3 class="team__card-info-title"></h3>
+            <ul class="team__card-info-list">
+              <li class="team__card-info-list-item">Wzrost:</li>
+              <li class="team__card-info-list-item">Waga:</li>
+              <li class="team__card-info-list-item">Numer na koszulce</li>
+              <li class="team__card-info-list-item">Osiągnięcia</li>
+              <li class="team__card-info-list-item">Inne</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
   <br>
   <br>
   <br>
