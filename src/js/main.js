@@ -1,7 +1,9 @@
 const mobileMenu = document.querySelector('.nav__box-mobile')
-const allNavItems = document.querySelectorAll('.nav__link')
+const allNavItems = document.querySelectorAll('.nav__box-link')
 const navBtn = document.querySelector('.hamburger')
 const footerYear = document.querySelector('.footer__year')
+
+console.log(allNavItems)
 
 const handleNav = () => {
 	navBtn.classList.toggle('is-active')
